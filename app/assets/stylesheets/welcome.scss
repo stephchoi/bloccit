@@ -1,3 +1,17 @@
 h1 {
     color: red;
 }
+
+button {
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+.social-btn {
+    box-sizing: border-box;
+    height: 30px;
+    width: auto;
+    padding: 2.5px 5px 2.5px 5px;
+}
