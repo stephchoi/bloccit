@@ -5,7 +5,7 @@ class SponseredPostsController < ApplicationController
 
   def new
     @topic = Topic.find(params[:topic_id])
-    @sponsered_post = SponseredPost.New
+    @sponsered_post = SponseredPost.new
   end
   
   def create
@@ -13,6 +13,7 @@ class SponseredPostsController < ApplicationController
     @sponsered_post.title = params[:sponsered_post][:title]
     @sponsered_post.body = params[:sponsered_post][:body]
     @sponsered_post.price = params[:sponsered_post][:price]
+    
     @topic = Topic.find(params[:topic_id])
     @sponsered_post.topic = @topic
     
@@ -27,6 +28,6 @@ class SponseredPostsController < ApplicationController
   end
 
   def edit
-    
+    @sponsered_post = SponseredPost.find(params[:id])
   end
 end
