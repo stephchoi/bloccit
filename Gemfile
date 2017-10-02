@@ -10,6 +10,9 @@
  
  gem 'bootstrap-sass'
  
+ #Encrypts passwords
+ gem 'bcrypt'
+ 
  group :production do
    # Use pg as the production database for Active Record
    gem 'pg'
