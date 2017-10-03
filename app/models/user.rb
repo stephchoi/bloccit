@@ -13,6 +13,6 @@ class User < ApplicationRecord
    has_secure_password
    
    def format_name
-        self.name = name.split.map! { |w| w.capitalize! }.join(" ") if name
+        self.name = name.split.map { |w| w.capitalize }.join(" ") if name
    end
 end
