@@ -1,0 +1,8 @@
+You've created a new post: "<%= @post.title %>"
+<%= "=" * (@post.title.length + 12) %>
+
+<%= @post.body %>
+
+You're following it and will receive updates of all future comments. If you want to stop receiving notifications, unfavorite your post.
+
+<%= link_to "View Post on site", topic_post_url(@post.topic, @post) %>

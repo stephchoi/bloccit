@@ -75,4 +75,19 @@ RSpec.describe Post, type: :model do
             end
         end
     end
+    
+   describe "after_create" do
+        before do
+            @another_post = topic.posts.create(title: "Another Post", body: "This is abother post body. Have at it.", user: user)
+        end
+        
+        it "favorites the created post" do
+            expect(user.favorites.find_by_post_id(@another_post.id)).not_to be_nil
+        end
+ 
+        it "does not send emails to users who haven't favorited the post" do
+            expect(FavoriteMailer).not_to receive(:new_post)
+            @another_post.save!
+        end
+    end   
 end
