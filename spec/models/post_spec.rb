@@ -73,5 +73,12 @@ RSpec.describe Post, type: :model do
                 expect(post.rank).to eq (old_rank - 1)
             end
         end
+        
+        describe "#create_vote" do
+           it "creates a vote automatically" do
+              p = topic.posts.create(title: title, body: body, user: user)
+              expect(p.points).to eq(1) 
+           end
+        end
     end
 end
