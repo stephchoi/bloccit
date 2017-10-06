@@ -13,6 +13,9 @@
  #Encrypts passwords
  gem 'bcrypt'
  
+ #Figaro
+ gem 'figaro', '1.0'
+ 
  group :production do
    # Use pg as the production database for Active Record
    gem 'pg'
