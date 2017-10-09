@@ -33,3 +33,6 @@
  <%= render @user.comments %>
 <% end %>
 
+<h4>Favorites</h4>
+<%= render partial: 'posts/favorite', locals: { favorite_posts: @favorite_posts } %>
+
